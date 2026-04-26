@@ -33,9 +33,10 @@ export const STRIPE = {
 };
 
 export const SUGGESTIONS = [
-  "I cannot sleep pet, what do I do?",
-  "Help me write an email to my boss",
-  "How do I center a div?",
+  "Me bairn won't eat owt except chips",
+  "Write me a canny excuse for being late",
+  "Why are Mackems so obsessed with us?",
+  "Is it too early to put the Christmas decs up?",
 ];
 
 export const PAYWALL_PHRASES = [
@@ -86,7 +87,7 @@ export const DISCLAIMER_LINE =
 
 export const STAMPS = {
   left: "★ NEWCASTLE · THE TYNE · GEORDIELAND ★",
-  right: "HOWAY PET",
+  right: "Givorr, Man!",
   label: "Toon Recordings · Est. Always",
   footerText: "for the banter pet, but the advice is champion",
 };
