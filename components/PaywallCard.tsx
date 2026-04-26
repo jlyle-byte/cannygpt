@@ -47,7 +47,7 @@ export default function PaywallCard() {
           onClick={() => trackEvent("Beer Button Clicked")}
           className="beer-btn flex items-center justify-center gap-3"
         >
-          🍺 Buy Bev a Newcastle Brown — {PAYWALL.priceBeer}
+          Buy Bev A Bottle o&apos; Broon — {PAYWALL.priceBeer}
           <span
             className="text-sm opacity-70 font-normal"
             style={{ fontFamily: "inherit" }}
@@ -63,7 +63,7 @@ export default function PaywallCard() {
           onClick={() => trackEvent("Case Button Clicked")}
           className="case-btn flex items-center justify-center gap-2"
         >
-          📦 Buy Bev a full round — {PAYWALL.priceCase}
+          Buy Bev a full round — {PAYWALL.priceCase}
           <span
             className="text-sm opacity-80"
             style={{ fontFamily: "inherit" }}
