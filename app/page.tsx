@@ -187,11 +187,29 @@ function PageInner() {
     };
   }, []);
 
+  // Scroll behavior (bumboclaude pattern): snap to bottom only when the
+  // *number* of messages changes (user send, assistant placeholder appended).
+  // Streaming token updates extend the last message's content but don't
+  // change the count, so they don't trigger a scroll — the response unfolds
+  // downward off-screen and the reader controls their own reading speed by
+  // scrolling manually.
+  const prevCountRef = useRef(messages.length);
+
   useEffect(() => {
     const el = scrollRef.current;
     if (!el) return;
-    el.scrollTop = el.scrollHeight;
-  }, [messages, loading]);
+    if (messages.length > prevCountRef.current) {
+      el.scrollTop = el.scrollHeight;
+    }
+    prevCountRef.current = messages.length;
+  }, [messages]);
+
+  // Bring the paywall on screen the moment it appears.
+  useEffect(() => {
+    if (showPaywall && scrollRef.current) {
+      scrollRef.current.scrollTop = scrollRef.current.scrollHeight;
+    }
+  }, [showPaywall]);
 
   async function sendMessage(text?: string) {
     const content = (text ?? input).trim();

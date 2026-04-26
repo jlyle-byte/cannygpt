@@ -3,16 +3,17 @@ import { STAMPS, CHARACTER_TAGLINE, PALETTE } from "@/lib/constants";
 export default function Header() {
   return (
     <header className="w-full max-w-3xl px-6 pt-12 pb-8 relative z-10">
-      {/* Top row: gold stamp microtype. Right (HOWAY PET) is the hero —
-          16px vs 11px on the left. No icons, just words. */}
+      {/* Top row: gold stamp microtype. Right is the hero — visibly larger
+          than the left supporting stamp. Sizes bumped 50% from the original
+          11/16 spec for stronger graphic presence. */}
       <div className="flex items-end justify-between mb-6 gap-4">
-        <span className="stamp" style={{ fontSize: 11 }}>
+        <span className="stamp" style={{ fontSize: 16.5 }}>
           {STAMPS.left}
         </span>
         <span
           className="stamp"
           style={{
-            fontSize: 16,
+            fontSize: 24,
             fontWeight: 700,
           }}
         >
