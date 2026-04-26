@@ -63,7 +63,7 @@ export default function PaywallCard() {
           onClick={() => trackEvent("Case Button Clicked")}
           className="case-btn flex items-center justify-center gap-2"
         >
-          Buy Bev a full round — {PAYWALL.priceCase}
+          Buy Bev a 6-Pack o&apos; Broon — {PAYWALL.priceCase}
           <span
             className="text-sm opacity-80"
             style={{ fontFamily: "inherit" }}
