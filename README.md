@@ -25,7 +25,6 @@ Open http://localhost:3000.
 ANTHROPIC_API_KEY=
 NEXT_PUBLIC_STRIPE_BEER_LINK=
 NEXT_PUBLIC_STRIPE_CASE_LINK=
-NEXT_PUBLIC_PLAUSIBLE_DOMAIN=cannygpt.com
 ```
 
 Restart `pnpm dev` after editing `.env.local` — Next.js loads env at startup.
@@ -95,7 +94,7 @@ NEXT_PUBLIC_STRIPE_CASE_LINK=https://buy.stripe.com/...
 1. Push to GitHub.
 2. Vercel → **Add New → Project**, import the repo.
 3. Framework preset: Next.js.
-4. **Environment Variables** — `ANTHROPIC_API_KEY`, both `NEXT_PUBLIC_STRIPE_*`, and `NEXT_PUBLIC_PLAUSIBLE_DOMAIN` for Production, Preview, Development.
+4. **Environment Variables** — `ANTHROPIC_API_KEY` and both `NEXT_PUBLIC_STRIPE_*` for Production, Preview, Development.
 5. Deploy.
 
 ---
@@ -138,21 +137,14 @@ The OG image (`public/og.png`, 1200×630) is created separately via Claude Desig
 
 ---
 
-## Custom analytics events
+## Analytics
 
-Plausible events fired by [`lib/plausible.ts`](lib/plausible.ts):
+Two sources, both already wired up — no third-party analytics service.
 
-| Event | Where |
-|---|---|
-| `Paywall Shown` | useEffect on `showPaywall === true` |
-| `Beer Button Clicked` | onClick beer-tier `<a>` |
-| `Case Button Clicked` | onClick case-tier `<a>` |
-| `Payment Success Beer` | Stripe redirect handler, tier=beer |
-| `Payment Success Case` | Stripe redirect handler, tier=case |
-| `Share Card Opened` | useEffect mount of ShareCard |
-| `Share Completed` | post-share / post-download |
+- **Vercel Web Analytics** via `<Analytics />` from `@vercel/analytics/react` in `app/layout.tsx`. Free tier covers page views, unique visitors, top pages, referrers, countries, devices, and Web Vitals. Vercel dashboard → Project → Analytics.
+- **Stripe Dashboard** is the source of truth for everything paywall-related: button clicks that converted (= each Payment Link checkout start), successful payments by tier, refunds, disputes, conversion rate. Set the statement descriptor to `CANNYGPT` so charges are identifiable on customer statements.
 
-`<Analytics />` from `@vercel/analytics/react` covers Web Vitals automatically.
+What's *not* tracked (deliberately): paywall shown, share-card opens, share completions. Trade-off accepted — if conversion analysis ever needs them, re-add a thin event layer rather than a third-party SDK.
 
 ---
 
