@@ -133,20 +133,14 @@ html, body {
 /* Internal divider inside chat card — solid black, cleaner than dashed. */
 .ink-divider { height: 1px; background: var(--bc-black); opacity: 0.85; }
 
-/* Gold-star avatar emblem — black circle with gold inner ring + white outer
-   ring + gold glow. The star itself is rendered via inline SVG inside. */
+/* Avatar wrapper — just dimensions + alignment for the shield image
+   (app/icon.png). The shield is a complete brand mark so no circle, ring,
+   border, or glow decoration is applied — those fought the image. */
 .tl-avatar {
   position: relative;
   width: 48px; height: 48px;
   flex-shrink: 0;
-  border-radius: 50%;
-  background: var(--bc-black);
-  border: 2px solid var(--bc-gold);
-  box-shadow:
-    0 0 0 2px var(--bc-primary),
-    0 0 12px rgba(245, 197, 24, 0.4);
   display: flex; align-items: center; justify-content: center;
-  overflow: hidden;
 }
 
 /* Beer-tier paywall button — black with gold border + white text. */
