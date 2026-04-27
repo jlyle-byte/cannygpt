@@ -111,7 +111,7 @@ export default function ShareCard({ msg, onClose }: Props) {
               className="display wordmark-stamp"
               style={{ fontSize: "2.5rem", marginTop: 12 }}
             >
-              cannygpt
+              CannyGPT
             </h2>
             <p
               className="serif italic"

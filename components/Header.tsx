@@ -31,7 +31,7 @@ export default function Header() {
             fontSize: "clamp(3.5rem, 12vw, 7.5rem)",
           }}
         >
-          cannygpt
+          CannyGPT
         </h1>
       </div>
 
