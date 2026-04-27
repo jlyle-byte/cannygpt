@@ -12,7 +12,6 @@ import Avatar from "./Avatar";
 import {
   PALETTE,
   SUGGESTIONS,
-  STAMPS,
   CHARACTER_NAME,
 } from "@/lib/constants";
 
@@ -68,16 +67,7 @@ const ChatWindow = forwardRef<HTMLDivElement, Props>(function ChatWindow(
       <div className="stripe-accent stripe-left" />
       <div className="stripe-accent stripe-right" />
 
-      {/* 1. Card header — № 001 · TOON RECORDINGS · EST. ALWAYS / SIDE A */}
-      <div className="px-8 md:px-12 pt-6 md:pt-7 flex items-center justify-between">
-        <span className="stamp" style={{ color: PALETTE.ink, opacity: 0.75 }}>
-          № 001 · {STAMPS.label.toUpperCase()}
-        </span>
-        <span className="stamp" style={{ color: PALETTE.ink, opacity: 0.55 }}>
-          SIDE A
-        </span>
-      </div>
-      <div className="ink-divider mx-8 md:mx-12 mt-3 mb-2" />
+      {/* No card header — the chat starts directly with the messages region. */}
 
       {/* 2. Scrollable messages area */}
       <div
