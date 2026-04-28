@@ -64,23 +64,6 @@ export const PAYWALL_PHRASES = [
 
 export const PAYWALL_MESSAGE = PAYWALL_PHRASES[0];
 
-// Network of sister sites in The Family. The current site is dimmed and
-// non-clickable in the footer (see components/Footer.tsx).
-// Characters4AI is the parent, not a sibling — rendered separately below.
-export const SISTER_SITES: { name: string; url: string }[] = [
-  { name: "Bumboclaude", url: "https://bumboclaude.com" },
-  { name: "ScouseGPT", url: "https://scousegpt.com" },
-  { name: "EckGPT", url: "https://eckgpt.com" },
-  { name: "CannyGPT", url: "https://cannygpt.com" },
-  { name: "ThereIsLovelyAI", url: "https://thereislovelyai.com" },
-  { name: "GertLushAI", url: "https://gertlushai.com" },
-  { name: "VainaGPT", url: "https://vainagpt.com" },
-  { name: "TioGPT", url: "https://tiogpt.com" },
-];
-
-// Marks which entry in SISTER_SITES is "this" site — rendered dimmed and
-// non-clickable. Must match a `name` value in SISTER_SITES exactly.
-export const CURRENT_SITE = "CannyGPT";
 
 export const DISCLAIMER_LINE =
   "Bev is an AI — warm as owt, but not a professional, pet. For medical, legal, or financial decisions, see a real expert hinny.";
