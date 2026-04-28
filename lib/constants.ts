@@ -71,7 +71,6 @@ export const DISCLAIMER_LINE =
 export const STAMPS = {
   left: "★ NEWCASTLE · THE TYNE · GEORDIELAND ★",
   right: "Givorr, Man!",
-  label: "Toon Recordings · Est. Always",
   footerText: "for the banter pet, but the advice is champion",
 };
 
