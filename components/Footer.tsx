@@ -61,27 +61,6 @@ export default function Footer() {
           </a>
         </div>
 
-        {/* Holding line — single acknowledgment of the parent brand */}
-        <p
-          className="stamp text-center mb-3"
-          style={{
-            color: PALETTE.primary,
-            opacity: 0.55,
-            fontSize: 10,
-          }}
-        >
-          Part of the{" "}
-          <a
-            href="https://characters4ai.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{ color: PALETTE.gold, opacity: 0.95 }}
-          >
-            Characters4AI
-          </a>{" "}
-          family
-        </p>
-
         {/* Copyright */}
         <p
           className="stamp text-center"
